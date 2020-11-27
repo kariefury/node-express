@@ -8,18 +8,57 @@
   <link rel="stylesheet" media="screen" href="css/style.css">
 </head>
 <body>
+<script>
+
+var assets = 9000; // starting
+var salary_after_tax = 6000; // monthly
+cost_of_food = 1200; // monthly
+cost_of_water = 10; // monthly
+cost_of_housing = 2897; // monthly
+cost_of_healthcare = 288; // monthly
+var myVar = setInterval(myTimer, 1000);
+
+var income = setInterval(myIncome,999);
+
+function myTimer() {
+  //var d = new Date();
+  //document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+  document.getElementById("p1").innerHTML = cost_of_food + " (linear)";
+  assets = assets - cost_of_food;
+  cost_of_food = cost_of_food;// + 100;
+}
+
+function myIncome() {
+
+	document.getElementById("assets").innerHTML = assets;
+	assets = assets + salary_after_tax;
+}
+
+</script>
 
 <!-- particles.js container -->
-<div id="particles-js"></div>
+<div id="particles-js">
+<div> Assets: <div id="assets"></div>
+<div> Food: <div id="p1"></div> </div>
+<div> Water:</div>
+<div> Healthcare: </div>
+<div> Shelter: </div>
+<div> Eduction: </div>
+</div>
 
 <!-- scripts -->
-<script src="javascripts/particles.js"></script>
+<!-- <script src="javascripts/particles.js"></script>
 
 <script>
 particlesJS.load('particles-js', 'particles.json', function() {
   console.log('particles.js loaded - callback');
 });
 </script>
+-->
+
+
+
+
 
 </body>
 </html>
